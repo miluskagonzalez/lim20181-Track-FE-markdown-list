@@ -1,6 +1,6 @@
 # md-links
 
-Extrae links de tus archivos Markdown, comprueba el estado de validación, identificando links rotos, y obtén estadísticas, como totales y links únicos.
+Extrae links de tus archivos Markdown, conoce el estado de validación, y obtén estadísticas, como links totales, únicos y rotos.
 
 ## Instalación
 
@@ -18,11 +18,11 @@ Extrae links de tus archivos Markdown, comprueba el estado de validación, ident
 
 #### Argumentos
 
-* `path {String}` Ruta absoluta o relativa al archivo o directorio.
-* `options {Object}` Un objeto con las siguientes propiedades:
+* **`path {String}`** Ruta absoluta o relativa al archivo o directorio.
+* **`options {Object}`** Un objeto con las siguientes propiedades:
 
-  * `validate {Boolean}` Valor que determina si se desea validar los links encontrados en el archivo.
-  * `stats {Boolean}` Valor que determina si se desea calcular los stats de los links encontrados en el archivo.
+  * **`validate {Boolean}`** Valor que determina si se desea validar los links encontrados en el archivo.
+  * **`stats {Boolean}`** Valor que determina si se desea calcular los stats de los links encontrados en el archivo.
 
 ```javascript
 const mdLinks = require("md-links");
