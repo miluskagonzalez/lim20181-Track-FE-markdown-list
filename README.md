@@ -1,33 +1,25 @@
 # md-links
 
-<!--Aquí descripción-->
+Extrae links de tus archivos Markdown, comprueba el estado de validación, identificando links rotos, y obtén estadísticas, como totales y links únicos.
 
 # Instalación
 
 ### [npm](https://docs.npmjs.com/cli/install):
 
 ```bash
-npm install @miluskagonzalez/md-links
+   npm install @miluskagonzalez/md-links
 ```
 
 # Uso
 
 ## API
 
-<!--> Descripción de API<-->
+<!-- Descripción de API -->
 
-## `mdLinks(path)`
+### `mdLinks(path[, options])`
 
 * `path` `{String}` Ruta absoluta o relativa al archivo o directorio.
-* return: `{Array<object>}` 
-
-## `mdLinks(path, options)`
-
-* `path` `{String}` 
-* `options` `{Object}`
-* return: `{Array<String>}` 
-
-Un objeto con las siguientes propiedades:
+* `options` `{Object}` Un objeto con las siguientes propiedades:
 
 validate: Valor que determina si se desea validar los links encontrados en el archivo. (tipo de dato booleano)
 stats: Valor que determina si se desea calcular los stats de de los links encontrados en el archivo. (tipo de dato booleano)
@@ -35,7 +27,13 @@ stats: Valor que determina si se desea calcular los stats de de los links encont
 ```javascript
 const mdLinks = require("md-links");
 
-mdLinks("./path/archivo.md")
+mdLinks("./path/to/file.md")
+  .then(links => {
+    // => [{ href, text, file }]
+  })
+  .catch(console.error);
+
+mdLinks("./path/to/directory")
   .then(links => {
     // => [{ href, text, file }]
   })
@@ -49,19 +47,13 @@ mdLinks("./path/archivo.md", { validate: true })
 
 mdLinks("./path/archivo.md", { stats: true })
   .then(links => {
-    // => [{ total, unique }]
+    // => { total, unique }
   })
   .catch(console.error);
 
-  mdLinks("./path/archivo.md", { stats: true, validate:true })
+mdLinks("./path/archivo.md", { stats: true, validate: true })
   .then(links => {
-    // => [{ total, unique, broken }]
-  })
-  .catch(console.error);
-
-mdLinks("./path/directorio")
-  .then(links => {
-    // => [{ href, text, file }]
+    // => { total, unique, broken }
   })
   .catch(console.error);
 ```
