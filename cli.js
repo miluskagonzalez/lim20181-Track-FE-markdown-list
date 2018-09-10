@@ -22,9 +22,9 @@ const validation = ({
   statusText, status, text, href, file,
 }) => log(highligth(statusText)(`\n ${status}: ${statusText} `), `${truncate(text)}\n${href}\n${file}`);
 
-const stats = ({ total, unique }) => log(`\nTotal: ${total}\nUnique: ${unique}`);
+const stats = ({ total, unique }) => log(`\nTotal: ${total}\tUnique: ${unique}`);
 
-const validationStats = ({ total, unique, broken }) => log(`\nTotal: ${total}\nUnique: ${unique}\nBroken: ${broken}`);
+const validationStats = ({ total, unique, broken }) => log(`\nTotal: ${total}\tUnique: ${unique}\tBroken: ${broken}`);
 
 const link = ({ text, href, file }) => log(`\n${truncate(text)}\n${href}\n${file}`);
 
